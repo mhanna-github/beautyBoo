@@ -1,3 +1,8 @@
+---
+import { Image } from 'astro:assets';
+import Shampoo from '../images/home-img.jpg';
+---
+
 <main>
     <section>
         <div class="flex flex-col items-center text-center gap-[0.3rem]  mx-[2rem]">
@@ -18,7 +23,7 @@
         <ul class="">
             <li>
                 <figure>
-                    <img src="./src/images/home-img.jpg" alt="BlueCloud Collection">
+                    <Image src={Shampoo} alt="BlueCloud Collection" />
                 </figure>
             </li>
         </ul>
