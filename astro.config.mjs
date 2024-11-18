@@ -7,5 +7,8 @@ export default defineConfig({
   integrations: [tailwind()],
   assets: {
     images: 'src/images/**/*'
+  },
+  image: {
+    service: 'squoosh'
   }
 });
