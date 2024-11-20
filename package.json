@@ -11,9 +11,10 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.2",
-    "astro": "^4.16.13",    
+    "astro": "^4.16.13",
     "sass": "^1.81.0",
     "sharp": "^0.32.0",
+    "swiper": "^11.1.15",
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {

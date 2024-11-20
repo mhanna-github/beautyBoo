@@ -1,0 +1,24 @@
+---
+import { Image } from 'astro:assets';
+import Bath from '../images/bath.jpg';
+import Drops from '../images/drops.png';
+import Cream from '../images/cream.png';
+---
+
+<section class="flex flex-col items-center justify-center mx-[1.4rem] lg:mx-[6.75rem] lg:mt-[15rem] mt-[4rem] text-center relative">
+    <div class="flex flex-col items-center justify-center align-middle">
+        <h2 class="uppercase text-[2rem] lg:text-[3rem] lg:max-w-[40rem]">we will take are of <span class="underline decoration-2  lg:underline-offset-[0.3rem] underline-offset-[0.1rem]">your <span class="px-[1rem] pb-[0.1rem] pt-[0.5rem] lg:pt-[0.7rem] bg-blue rounded-full">beauty</span></span></h2>
+        <p class="text-[1.2rem] lg:text-[1.4rem] lg:max-w-[840px] mt-[1rem]">At BeautyBoo, we believe that our mission is to provide you with a range of high-quality cosmetics that not only enhance your natural beauty but also nurture your skin and your conscience. We are committed to offering products that are as kind to the planet as they are to your skin.</p>
+    </div>
+    <div>
+        <figure class="absolute lg:left-0 lg:-top-[12%] hidden lg:block z-[-1] ">
+            <Image src={Bath} class="w-[100%] h-[100%] object-cover w-full h-auto object-cover" alt="BeautyBoo Bath" />
+        </figure>
+        <figure class="absolute lg:left-[10%] lg:bottom-[10%] hidden lg:block z-[-1]">
+            <Image src={Drops} class="w-[100%] h-[100%] object-cover w-full h-auto object-cover" alt="BeautyBoo Drops" />
+        </figure>
+        <figure class="hidden lg:block">
+            <Image src={Cream} class="w-[100%] h-[100%] object-cover w-full h-auto object-cover" alt="BeautyBoo Cream" />
+        </figure>
+    </div>
+</section>

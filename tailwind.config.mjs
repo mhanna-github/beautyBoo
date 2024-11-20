@@ -11,13 +11,13 @@ export default {
 		colors: {
 			'dark-blue': '#4279B8',
 			'blue': '#8ABEE2',
-			'light-blue': '#DFEFF9',
+			'light-blue': '#BADEF3',
 			'black': '#131313',
 			'white': '#F4F8F9',
 		},
 		fontFamily: {
 			'telegraf': ['PP Telegraf', 'sans-serif'],
-			'monument': ['PP Monument Extended', 'sans-serif'],
+			'monument': ['Monument Extended', 'sans-serif'],
 		},
 		extend: {
 			animation: {
