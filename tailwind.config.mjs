@@ -12,6 +12,7 @@ export default {
 			'dark-blue': '#4279B8',
 			'blue': '#8ABEE2',
 			'light-blue': '#BADEF3',
+			'accent': '#579ACD',
 			'black': '#131313',
 			'white': '#F4F8F9',
 		},
@@ -21,18 +22,18 @@ export default {
 		},
 		extend: {
 			animation: {
-			  marquee: 'marquee 35s linear infinite',
-			  marquee2: 'marquee2 35s linear infinite',
+				marquee: 'marquee 35s linear infinite',
+				marquee2: 'marquee2 35s linear infinite',
 			},
 			keyframes: {
-			  marquee: {
+				marquee: {
 				'0%': { transform: 'translateX(0%)' },
 				'100%': { transform: 'translateX(-100%)' },
-			  },
-			  marquee2: {
-				'0%': { transform: 'translateX(100%)' },
-				'100%': { transform: 'translateX(0%)' },
-			  },
+				},
+				marquee2: {
+					'0%': { transform: 'translateX(100%)' },
+					'100%': { transform: 'translateX(0%)' },
+				},
 			},
 		},
 	},

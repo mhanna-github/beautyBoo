@@ -3,10 +3,51 @@ import Layout from '../layouts/Layout.astro';
 import Home from '../components/Home.astro';
 import Menu from '../components/Menu.astro';
 import TitleTextImages from '../components/TitleTextImages.astro';
+import InfoBlock from '../components/InfoBlock.astro';
 ---
 
 <Layout title="BeautyBoo">
 	<Menu />
 	<Home />
 	<TitleTextImages />
+	<InfoBlock />
 </Layout>
+
+<script is:inline>
+    const lenis = new Lenis({
+        duration: 1.2,
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+</script>
+
+<style is:global>
+    html.lenis {
+        height: auto;
+    }
+
+    .lenis.lenis-smooth {
+        scroll-behavior: auto;
+    }
+
+    .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+    }
+
+    .lenis.lenis-stopped {
+        overflow: hidden;
+    }
+
+    .lenis.lenis-scrolling iframe {
+        pointer-events: none;
+    }
+</style>
