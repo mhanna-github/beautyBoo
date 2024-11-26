@@ -12,12 +12,13 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                serif: ['PP Telegraf', ...defaultTheme.fontFamily.serif],
-                sans: ['Monument Extended', ...defaultTheme.fontFamily.sans]
+                telegraf: ['PP Telegraf', ...defaultTheme.fontFamily.serif],
+                monument: ['PP Monument Extended', ...defaultTheme.fontFamily.sans]
             },
             fontSize: {
-                h1: utopiaClamp(46, 70),
-                h2: utopiaClamp(42, 22),
+                h1: utopiaClamp(46, 68),
+                h2: utopiaClamp(28, 48),
+                h3: utopiaClamp(22, 28),
                 body: utopiaClamp(14, 16),
                 button: '14px'
             },

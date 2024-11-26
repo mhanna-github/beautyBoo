@@ -41,6 +41,7 @@
         "nanostores": "^0.11.3",
         "sass": "^1.77.4",
         "sharp": "^0.33.5",
+        "swiper": "^11.1.15",
         "swup": "^4.7.0",
         "ts-debounce": "^4.0.0",
         "typescript": "^5.4.5"
@@ -58,7 +59,7 @@
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx,md,mdx,json,astro}": [
-          "prettier --write"
+            "prettier --write"
         ]
-      }
+    }
 }
