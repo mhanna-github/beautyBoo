@@ -37,9 +37,6 @@ export default defineConfig({
     integrations: [
         tailwind({
             applyBaseStyles: false
-        }),
-        svgSprite({
-            include: './src/assets/svgs'
         })
     ],
     devToolbar: {

@@ -12,19 +12,20 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                serif: ['Times New Roman', ...defaultTheme.fontFamily.serif],
-                sans: ['Arial', ...defaultTheme.fontFamily.sans]
+                serif: ['PP Telegraf', ...defaultTheme.fontFamily.serif],
+                sans: ['Monument Extended', ...defaultTheme.fontFamily.sans]
             },
             fontSize: {
-                h1: utopiaClamp(60, 120),
-                h2: utopiaClamp(40, 80),
+                h1: utopiaClamp(46, 70),
+                h2: utopiaClamp(42, 22),
                 body: utopiaClamp(14, 16),
                 button: '14px'
             },
             colors: {
-                black: '#000000',
-                white: '#ffffff',
-                primary: '#312dfb'
+                black: '#131313',
+                white: '#F4F8F9',
+                primary: '#8ABEE2',
+                secondary: '#579ACD'
             },
             screens: {
                 'to-2xs': { max: '339px' },
@@ -49,8 +50,8 @@ export default {
                 '5xl': '2400px'
             },
             spacing: {
-                containerMargin: '20px',
-                containerMarginMobile: '10px',
+                containerMargin: '40px',
+                containerMarginMobile: '15px',
                 'fluid-xs': utopiaClamp(8, 10),
                 'fluid-sm': utopiaClamp(16, 24),
                 'fluid-md': utopiaClamp(24, 32),
@@ -61,7 +62,7 @@ export default {
                 'fluid-4xl': utopiaClamp(128, 160)
             },
             gap: {
-                gutter: '20px',
+                gutter: '24px',
                 gutterMobile: '10px'
             },
             transitionDuration: {
