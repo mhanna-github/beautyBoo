@@ -43,6 +43,9 @@ export default defineConfig({
         enabled: false
     },
     image: {
+        service: {
+            entrypoint: 'astro/assets/services/sharp'
+        },
         domains: ['locomotive.ca'],
         remotePatterns: [{ protocol: 'https' }]
     }
