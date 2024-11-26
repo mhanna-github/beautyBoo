@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
-import svgSprite from 'astro-svg-sprite';
 import tailwindConfig from './tailwind.config';
 import postcssTailwindShortcuts from '@locomotivemtl/postcss-tailwind-shortcuts';
 import removeDoubleParentheses from '@locomotivemtl/postcss-remove-double-parentheses';
