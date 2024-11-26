@@ -1,5 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import Shampoo from './src/images/home-slider1.jpg';
+import Scrub from './src/images/home-slider2.jpg';
+import Cream from './src/images/home-slider3.jpg';
 ---
 
 <Layout title="BeautyBoo">
@@ -47,29 +51,17 @@ import Layout from '../layouts/Layout.astro';
             <ul class="swiper-wrapper">
                 <li class="swiper-slide w-screen">
                     <figure class="w-full h-full">
-                        <img
-                            src="./src/images/home-slider1.jpg"
-                            alt="#"
-                            class="w-full h-full object-cover"
-                        />
+                        <Image src={Shampoo} alt="#" class="w-full h-full object-cover" />
                     </figure>
                 </li>
                 <li class="swiper-slide w-screen">
                     <figure class="w-full h-full">
-                        <img
-                            src="./src/images/home-slider2.jpg"
-                            alt="#"
-                            class="w-full h-full object-cover"
-                        />
+                        <Image src={Scrub} alt="#" class="w-full h-full object-cover" />
                     </figure>
                 </li>
                 <li class="swiper-slide w-screen">
                     <figure class="w-full h-full">
-                        <img
-                            src="./src/images/home-slider3.jpg"
-                            alt="#"
-                            class="w-full h-full object-cover"
-                        />
+                        <Image src={Cream} alt="#" class="w-full h-full object-cover" />
                     </figure>
                 </li>
             </ul>
