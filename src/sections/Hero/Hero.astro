@@ -1,14 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import Slider1 from '../images/home-slider1.jpg';
-import Slider2 from '../images/home-slider2.jpg';
-import Slider3 from '../images/home-slider3.jpg';
+import Image from '@components/Image/Image.astro';
 ---
 
 <header data-scroll-section>
     <div class="u-container u-relative u-mt-fluid-sm lg:u-mt-0">
         <div
-            class="u-flex u-flex-col u-gap-3 u-text-center lg:u-absolute lg:u-top-32 lg:u-z-50 lg:u-max-w-lg lg:u-items-end lg:u-text-left"
+            class="u-flex u-flex-col u-gap-3 u-text-center lg:u-absolute lg:u-top-[12vw] lg:u-z-50 lg:u-max-w-lg lg:u-items-end lg:u-text-left"
         >
             <span class="u-flex u-flex-col u-gap-1.5">
                 <h1 class="u-heading-h1 u-font-bold u-text-primary">BlueCloud</h1>
@@ -49,17 +46,29 @@ import Slider3 from '../images/home-slider3.jpg';
         <ul class="swiper-wrapper">
             <li class="swiper-slide w-screen">
                 <figure class="w-full h-full">
-                    <Image src={Slider1} alt="Shampoo" class="w-full h-full object-cover" />
+                    <Image
+                        src={import('@images/placeholder.jpg')}
+                        alt="Shampoo"
+                        class="w-full h-full object-cover"
+                    />
                 </figure>
             </li>
             <li class="swiper-slide w-screen">
                 <figure class="w-full h-full">
-                    <Image src={Slider2} alt="Scrub" class="w-full h-full object-cover" />
+                    <Image
+                        src={import('@images/home-slider2.jpg')}
+                        alt="Scrub"
+                        class="w-full h-full object-cover"
+                    />
                 </figure>
             </li>
             <li class="swiper-slide w-screen">
                 <figure class="w-full h-full">
-                    <Image src={Slider3} alt="Cream" class="w-full h-full object-cover" />
+                    <Image
+                        src={import('@images/home-slider3.jpg')}
+                        alt="Cream"
+                        class="w-full h-full object-cover"
+                    />
                 </figure>
             </li>
         </ul>

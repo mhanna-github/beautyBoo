@@ -7,6 +7,7 @@
             "@root/*": ["./*"],
             "@src/*": ["./src/*"],
             "@components/*": ["./src/components/*"],
+            "@sections/*": ["./src/sections/*"],
             "@layouts/*": ["./src/layouts/*"],
             "@images/*": ["./src/assets/images/*"],
             "@pages/*": ["./src/pages/*"],
