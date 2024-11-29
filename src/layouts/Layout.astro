@@ -1,5 +1,6 @@
 ---
 import '@styles/main.scss';
+import Button from '@components/Button/Button.astro';
 import { SEO } from 'astro-seo';
 import { getSeo } from '@scripts/utils/seo';
 
@@ -108,16 +109,24 @@ const FONTS: string[] = [
                 </a>
                 <ul class="u-flex u-hidden u-flex-row u-gap-gutter lg:u-flex">
                     <li>
-                        <a href="/">Hair Products</a>
+                        <Button href="https://example.com" class="c-button c-button--nav"
+                            >Home Page</Button
+                        >
                     </li>
                     <li>
-                        <a href="/about">Body Products</a>
+                        <Button href="https://example.com" class="c-button c-button--nav"
+                            >Hair Products</Button
+                        >
                     </li>
                     <li>
-                        <a href="/">Face Products</a>
+                        <Button href="https://example.com" class="c-button c-button--nav"
+                            >Face Products</Button
+                        >
                     </li>
                     <li>
-                        <a href="">About Us</a>
+                        <Button href="https://example.com" class="c-button c-button--nav"
+                            >About Us</Button
+                        >
                     </li>
                 </ul>
                 <a href="">
@@ -165,7 +174,7 @@ const FONTS: string[] = [
 
             <nav class="u-flex u-gap-gutter">
                 <a href="/">Index</a>
-                <a href="/about">About</a>
+                <Button href="/about">About Us</Button>
             </nav>
         </footer>
         <script src="../scripts/app.ts"></script>

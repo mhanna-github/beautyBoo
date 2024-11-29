@@ -6,18 +6,18 @@
     --button-height: auto;
     --button-width: auto;
     --button-radius: 0px;
-    --button-font-size: #{theme('fontSize.button')};
-    --button-padding: 15px 28px;
+    --button-padding: 10пpx 25px;
     --button-gap: 25px;
+    //    --button-font-size: #{theme('fontSize.button')};
 
     // Idle state - Default styles
-    --button-color: #{theme-color('white')};
-    --button-background: #{theme-color('black')};
+    --button-color: #{theme-color('black')};
+    --button-background: #{theme-color('primary')};
     --button-stroke-color: transparent;
 
     // Hover state - Default styles
     --button-color-hover: #{theme-color('white')};
-    --button-background-hover: grey;
+    --button-background-hover: #{theme-color('black')};
 
     // Active state - Default styles
     --button-color-active: #{theme-color('black')};
@@ -36,14 +36,63 @@
     font-size: var(--button-font-size);
     background-color: var(--button-background);
     border: 1px solid var(--button-stroke-color);
-    transition: background-color theme-speed() theme-ease();
+    transition: all theme-speed() theme-ease();
+    cursor: pointer;
 
     // Hover
     @media (hover: hover) {
         .u-button-hover:hover &,
         &:hover {
-            background-color: var(--button-background-hover);
-            color: var(--button-color-hover);
+            text-decoration-line: underline;
+            -moz-text-decoration-line: underline;
         }
+    }
+
+    // Variants
+    &--primary {
+        --button-color: #{theme-color('black')};
+        --button-background: #{theme-color('primary')};
+        --button-stroke-color: transparent;
+        
+        &:hover {
+            --button-color: #{theme-color('white')};
+            --button-background: #{theme-color('black')};
+        }
+    }
+
+    &--secondary {
+        --button-color: #{theme-color('white')};
+        --button-background: #{theme-color('black')};
+        --button-stroke-color: transparent;
+        
+        &:hover {
+            --button-color: #{theme-color('black')};
+            --button-background: #{theme-color('white')};
+        }
+    }
+
+    &--outline {
+        --button-color: #{theme-color('black')};
+        --button-background: transparent;
+        --button-stroke-color: #{theme-color('black')};
+        
+        &:hover {
+            --button-color: #{theme-color('white')};
+            --button-background: #{theme-color('black')};
+        }
+    }
+
+    &--link {
+        --button-color: #{theme-color('primary')};
+        --button-background: transparent;
+        --button-stroke-color: transparent;
+        --button-font-size: #{theme('fontSize.h3')};
+    }
+
+    &--nav{
+        --button-color: #{theme-color('black')};
+        --button-background: transparent;
+        --button-stroke-color: transparent;
+        --button-font-size: #{theme('fontSize.p')};
     }
 }

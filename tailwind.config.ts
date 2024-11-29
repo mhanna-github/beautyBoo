@@ -19,6 +19,7 @@ export default {
                 h1: utopiaClamp(46, 68),
                 h2: utopiaClamp(28, 48),
                 h3: utopiaClamp(22, 28),
+                h4: utopiaClamp(18, 25),
                 p: utopiaClamp(14, 18),
                 body: utopiaClamp(14, 18),
                 button: '14px'
