@@ -102,3 +102,6 @@ html.is-animating .transition-fade {
     padding: theme-spacing('fluid-sm');
     z-index: theme-z();
 }
+
+// Import animations
+@import 'animations';

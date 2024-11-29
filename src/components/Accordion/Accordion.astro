@@ -2,6 +2,7 @@
 interface Props {
     label: string;
     class?: string;
+    style?: string;
     name?: string;
 }
 
@@ -14,7 +15,7 @@ const classes = ['c-accordion', propsClass];
     <details class="c-accordion_details" name={name}>
         <summary class="c-accordion_summary">
             <span>{label}</span>
-            <span class="c-accordion_icon" aria-hidden="true">&darr;</span>
+            <!-- <span class="c-accordion_icon" aria-hidden="true">&darr;</span> -->
         </summary>
         <div class="c-accordion_content">
             <slot />

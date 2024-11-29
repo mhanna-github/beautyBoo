@@ -1,0 +1,114 @@
+---
+import '@styles/animations.scss';
+import Image from '@components/Image/Image.astro';
+---
+
+<section data-scroll-section>
+    <div class="u-mt-[20vw] u-flex u-flex-col u-items-center u-gap-gutter">
+        <h2 class="u-text-h2 u-uppercase">
+            <span
+                class="u-rounded-[50px] u-bg-primary u-px-4 u-py-1 u-underline lg:u-px-4 lg:u-py-2"
+                >Special</span
+            > Offer
+        </h2>
+        <div class="w-screen u-flex u-flex-col lg:u-flex-row">
+            <div class="u-relative u-w-full">
+                <figure class="u-max-w-1/2 u-w-full">
+                    <Image
+                        src={import('@images/SpecialOfferBg.png')}
+                        alt="Special Offer"
+                        loading="lazy"
+                        class="u-h-full u-w-full u-object-contain"
+                    />
+                </figure>
+                <div>
+                    <figure
+                        class="u-animate-float-small u-absolute -u-top-[12%] u-left-0 u-z-30 u-max-w-[32vw] lg:u-max-w-[20vw]"
+                    >
+                        <Image
+                            src={import('@images/Balm.png')}
+                            alt="Special Offer"
+                            loading="lazy"
+                            class="u-h-full u-w-full u-object-contain"
+                        />
+                    </figure>
+                    <figure
+                        class="u-animate-float-medium u-absolute u-left-[18%] u-top-[5%] u-z-30 u-max-w-[35vw] lg:u-max-w-[22vw]"
+                    >
+                        <Image
+                            src={import('@images/Cream.png')}
+                            alt="Special Offer"
+                            loading="lazy"
+                            class="u-h-full u-w-full u-object-contain"
+                        />
+                    </figure>
+                    <figure
+                        class="u-animate-float-large u-absolute u-bottom-0 u-left-[60%] u-z-30 u-max-w-[29vw] lg:u-max-w-[15vw]"
+                    >
+                        <Image
+                            src={import('@images/Foam.png')}
+                            alt="Special Offer"
+                            loading="lazy"
+                            class="u-h-full u-w-full u-object-contain"
+                        />
+                    </figure>
+                    <figure class="u-absolute u-bottom-0 u-left-0 u-z-40">
+                        <Image
+                            src={import('@images/Clouds.png')}
+                            alt="Special Offer"
+                            loading="lazy"
+                            class="u-h-full u-w-full u-object-contain"
+                        />
+                    </figure>
+                    <figure
+                        class="u-animate-float-large u-absolute -u-bottom-[15%] u-left-[30%] u-z-50 u-max-w-[40vw] lg:u-max-w-[22vw]"
+                    >
+                        <Image
+                            src={import('@images/Scrub.png')}
+                            alt="Special Offer"
+                            loading="lazy"
+                            class="u-h-full u-w-full u-object-contain"
+                        />
+                    </figure>
+                    <figure
+                        class="u-animate-float-small u-absolute -u-bottom-[22%] -u-right-[10%] u-z-50 u-max-w-[30vw] lg:u-max-w-[18vw]"
+                    >
+                        <Image
+                            src={import('@images/Spray.png')}
+                            alt="Special Offer"
+                            loading="lazy"
+                            class="u-h-full u-w-full u-object-contain"
+                        />
+                    </figure>
+                </div>
+            </div>
+            <div class="u-max-w-1/2 u-z-[99] u-w-full u-bg-lightBlue lg:u-z-10">
+                <div class="u-px-[8vw] u-py-[6vw]">
+                    <h3 class="u-text-h3 u-uppercase">
+                        Buy our starter BeautyBoo care-kit, which includes :
+                    </h3>
+                    <ul class="u-mt-[2vw] u-flex u-list-disc u-flex-col u-gap-[1vw] lg:u-ml-[5vw]">
+                        <li>
+                            <p class="u-text-h4">Gentle & clensing Face foam</p>
+                        </li>
+                        <li>
+                            <p class="u-text-h4">Gentle & clensing Face scrub</p>
+                        </li>
+                        <li>
+                            <p class="u-text-h4">Protecting & calming Face cream</p>
+                        </li>
+                        <li>
+                            <p class="u-text-h4">Moistrizing & smoothing Hair Balm</p>
+                        </li>
+                        <li>
+                            <p class="u-text-h4">Heat protection & recovering Hair spray</p>
+                        </li>
+                    </ul>
+                    <h3 class="u-mt-[2vw] u-text-h3 u-uppercase lg:u-ml-[5vw]">
+                        With a 10% discount and a <span>gift</span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

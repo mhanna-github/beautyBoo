@@ -17,7 +17,7 @@ export default {
             },
             fontSize: {
                 h1: utopiaClamp(46, 68),
-                h2: utopiaClamp(28, 48),
+                h2: utopiaClamp(28, 42),
                 h3: utopiaClamp(22, 28),
                 h4: utopiaClamp(18, 25),
                 p: utopiaClamp(14, 18),
@@ -28,7 +28,8 @@ export default {
                 black: '#131313',
                 white: '#F4F8F9',
                 primary: '#8ABEE2',
-                secondary: '#579ACD'
+                secondary: '#579ACD',
+                lightBlue: '#DFEFF9'
             },
             screens: {
                 'to-2xs': { max: '339px' },
