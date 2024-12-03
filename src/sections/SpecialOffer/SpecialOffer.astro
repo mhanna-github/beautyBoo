@@ -1,9 +1,10 @@
 ---
 import '@styles/animations.scss';
 import Image from '@components/Image/Image.astro';
+import Button from '@components/Button/Button.astro';
 ---
 
-<section data-scroll-section>
+<section data-scroll-section class="u-overflow-hidden">
     <div class="u-mt-[20vw] u-flex u-flex-col u-items-center u-gap-gutter">
         <h2 class="u-text-h2 u-uppercase">
             <span
@@ -71,7 +72,7 @@ import Image from '@components/Image/Image.astro';
                         />
                     </figure>
                     <figure
-                        class="u-animate-float-small u-absolute -u-bottom-[22%] -u-right-[10%] u-z-50 u-max-w-[30vw] lg:u-max-w-[18vw]"
+                        class="u-animate-float-small u-absolute -u-bottom-[20%] -u-right-[12%] u-z-50 u-max-w-[30vw] lg:u-max-w-[18vw]"
                     >
                         <Image
                             src={import('@images/spray.png')}
@@ -82,12 +83,16 @@ import Image from '@components/Image/Image.astro';
                     </figure>
                 </div>
             </div>
-            <div class="u-max-w-1/2 u-z-[99] u-w-full u-bg-lightBlue lg:u-z-10">
-                <div class="u-px-[8vw] u-py-[6vw]">
-                    <h3 class="u-text-h3 u-uppercase">
+            <div
+                class="u-max-w-1/2 u-z-[99] u-flex u-w-full u-bg-lightBlue lg:u-z-10 lg:u-items-center lg:u-justify-center"
+            >
+                <div class="u-px-[8vw] u-py-[2vw]">
+                    <h3 class="u-mb-[1vw] u-text-h4 u-uppercase">
                         Buy our starter BeautyBoo care-kit, which includes :
                     </h3>
-                    <ul class="u-mt-[2vw] u-flex u-list-disc u-flex-col u-gap-[1vw] lg:u-ml-[5vw]">
+                    <ul
+                        class="u-flex u-list-disc u-flex-col u-gap-[1vw] lg:u-ml-[2vw] lg:u-gap-[0.5vw]"
+                    >
                         <li>
                             <p class="u-text-h4">Gentle & clensing Face foam</p>
                         </li>
@@ -98,14 +103,14 @@ import Image from '@components/Image/Image.astro';
                             <p class="u-text-h4">Protecting & calming Face cream</p>
                         </li>
                         <li>
-                            <p class="u-text-h4">Moistrizing & smoothing Hair Balm</p>
-                        </li>
-                        <li>
                             <p class="u-text-h4">Heat protection & recovering Hair spray</p>
                         </li>
+                        <li>
+                            <p class="u-text-h4">Moistrizing & smoothing Hair Balm</p>
+                        </li>
                     </ul>
-                    <h3 class="u-mt-[2vw] u-text-h3 u-uppercase lg:u-ml-[5vw]">
-                        With a 10% discount and a <span>gift</span>
+                    <h3 class="u-mt-[1vw] u-text-h4 u-uppercase lg:u-ml-[2vw]">
+                        With 10% discount and a gift
                     </h3>
                 </div>
             </div>

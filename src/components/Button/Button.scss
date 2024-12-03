@@ -61,13 +61,14 @@
     }
 
     &--secondary {
-        --button-color: #{theme-color('white')};
-        --button-background: #{theme-color('black')};
+        --button-color: #{theme-color('black')};
+        --button-background: #{theme-color('white')};
         --button-stroke-color: transparent;
+        --button-font-size: #{theme('fontSize.h4')};
         
         &:hover {
-            --button-color: #{theme-color('black')};
-            --button-background: #{theme-color('white')};
+            --button-color: #{theme-color('white')};
+            --button-background: #{theme-color('primary')};
         }
     }
 

@@ -11,6 +11,20 @@ export default {
     },
     theme: {
         extend: {
+            animation: {
+                marquee: 'marquee 25s linear infinite',
+                marquee2: 'marquee2 25s linear infinite'
+            },
+            keyframes: {
+                marquee: {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' }
+                },
+                marquee2: {
+                    '0%': { transform: 'translateX(100%)' },
+                    '100%': { transform: 'translateX(0%)' }
+                }
+            },
             fontFamily: {
                 telegraf: ['PP Telegraf', ...defaultTheme.fontFamily.serif],
                 monument: ['PP Monument Extended', ...defaultTheme.fontFamily.sans]
@@ -20,6 +34,7 @@ export default {
                 h2: utopiaClamp(28, 42),
                 h3: utopiaClamp(22, 28),
                 h4: utopiaClamp(18, 25),
+                h5: utopiaClamp(14, 15),
                 p: utopiaClamp(14, 18),
                 body: utopiaClamp(14, 18),
                 button: '14px'
