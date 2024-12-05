@@ -7,6 +7,7 @@ import { getSeo } from '@scripts/utils/seo';
 interface Props {
     title: string;
     seo?: Seo;
+    id?: string;
 }
 
 const { title, seo = {} } = Astro.props;
@@ -134,12 +135,10 @@ const FONTS: string[] = [
                 </a>
                 <ul class="u-hidden u-flex-row u-gap-gutter lg:u-flex">
                     <li>
-                        <Button href="https://example.com" class="c-button c-button--nav">
-                            Home Page
-                        </Button>
+                        <Button href="/" class="c-button c-button--nav"> Home Page </Button>
                     </li>
                     <li>
-                        <Button href="https://example.com" class="c-button c-button--nav">
+                        <Button href="/product" class="c-button c-button--nav">
                             Hair Products
                         </Button>
                     </li>
@@ -149,9 +148,7 @@ const FONTS: string[] = [
                         </Button>
                     </li>
                     <li>
-                        <Button href="https://example.com" class="c-button c-button--nav">
-                            About Us
-                        </Button>
+                        <Button href="/about" class="c-button c-button--nav"> About Us </Button>
                     </li>
                 </ul>
                 <a href="">

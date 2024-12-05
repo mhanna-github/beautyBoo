@@ -1,0 +1,81 @@
+---
+import Image from '@components/Image/Image.astro';
+
+const products = [
+    {
+        image: import('@images/product-1.png'),
+        title: 'Mask',
+        price: '54$'
+    },
+    {
+        image: import('@images/product-2.png'),
+        title: 'Shampoo',
+        price: '60$'
+    },
+    {
+        image: import('@images/product-3.png'),
+        title: 'Balm',
+        price: '49$'
+    },
+    {
+        image: import('@images/product-4.png'),
+        title: 'Spray',
+        price: '42$'
+    },
+    {
+        image: import('@images/product-5.png'),
+        title: 'Gel',
+        price: '58$'
+    },
+    {
+        image: import('@images/product-1.png'),
+        title: 'Mask',
+        price: '64$'
+    },
+    {
+        image: import('@images/product-2.png'),
+        title: 'Foam',
+        price: '52$'
+    },
+    {
+        image: import('@images/product-3.png'),
+        title: 'Balm',
+        price: '39$'
+    }
+];
+---
+
+<header data-scroll-section>
+    <div
+        class="u-relative u-mt-[1vw] after:u-absolute after:u-bottom-0 after:u-left-10 after:u-right-10 after:u-h-[1px] after:u-bg-black after:u-content-['']"
+    >
+        <div class="u-container u-flex u-flex-col u-gap-gutter u-text-center">
+            <h1 class="u-heading-h1 u-uppercase">Hair Care</h1>
+            <p class="u-text-h3 u-uppercase">
+                We`re taking a careful care of your hair on each step of washing hair routine
+            </p>
+        </div>
+        <ul class="u-mt-[3vw] u-flex u-flex-row u-gap-[10vw] u-overflow-clip">
+            {
+                products.map((product, index) => (
+                    <li>
+                        <h3 class="u-text-h3">0{index + 1}</h3>
+                        <a class="u-mt-gutter u-flex u-cursor-pointer u-flex-col u-items-center u-gap-gutter">
+                            <figure class="u-hover-scale u-relative u-aspect-[264/622] u-w-[25vw] lg:u-w-[12vw]">
+                                <Image
+                                    src={product.image}
+                                    alt={product.title}
+                                    class="u-absolute u-inset-0 u-grid u-h-full u-w-full u-place-items-end u-object-cover"
+                                />
+                            </figure>
+                            <span class="u-text-center">
+                                <h4 class="u-text-h4 u-uppercase">{product.title}</h4>
+                                <p class="u-text-h5">{product.price}</p>
+                            </span>
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</header>
