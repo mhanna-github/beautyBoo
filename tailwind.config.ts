@@ -30,10 +30,10 @@ export default {
                 monument: ['PP Monument Extended', ...defaultTheme.fontFamily.sans]
             },
             fontSize: {
-                h1: utopiaClamp(46, 68),
-                h2: utopiaClamp(28, 42),
-                h3: utopiaClamp(22, 28),
-                h4: utopiaClamp(18, 25),
+                h1: utopiaClamp(35, 65),
+                h2: utopiaClamp(24, 42),
+                h3: utopiaClamp(20, 28),
+                h4: utopiaClamp(16, 25),
                 h5: utopiaClamp(14, 15),
                 p: utopiaClamp(14, 18),
                 body: utopiaClamp(14, 18),

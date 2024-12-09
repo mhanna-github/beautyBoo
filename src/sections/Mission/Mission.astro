@@ -26,10 +26,10 @@ const missions = [
                 >mission</span
             >
         </h2>
-        <ul class="u-flex u-flex-col u-justify-between lg:u-flex-row">
+        <ul class="u-flex u-flex-col u-gap-gutter lg:u-flex-row lg:u-justify-between">
             {
                 missions.map((mission) => (
-                    <li class="u-flex u-flex-col u-gap-gutter lg:u-w-[25vw]">
+                    <li class="u-flex u-flex-col u-gap-[1vw] lg:u-w-[25vw]">
                         <h3 class="u-text-h3 u-uppercase">{mission.title}</h3>
                         <p class="u-text-p">{mission.description}</p>
                     </li>
