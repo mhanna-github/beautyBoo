@@ -53,6 +53,7 @@
         --button-color: #{theme-color('black')};
         --button-background: #{theme-color('primary')};
         --button-stroke-color: transparent;
+        --button-padding: 10px 40px;
         
         &:hover {
             --button-color: #{theme-color('white')};

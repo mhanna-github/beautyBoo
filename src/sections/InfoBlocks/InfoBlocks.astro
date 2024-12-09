@@ -1,0 +1,36 @@
+---
+import Image from '@components/Image/Image.astro';
+---
+
+<section data-scroll-section>
+    <div
+        class="u-container u-mt-[20vw] u-flex u-flex-col u-justify-center u-gap-gutter lg:u-flex-row"
+    >
+        <figure class="u-hidden u-h-full u-w-[30vw] lg:u-block">
+            <Image
+                src={import('@images/info-block.png')}
+                alt="About Us"
+                class="u-h-full u-w-full u-object-cover"
+                loading="eager"
+            />
+        </figure>
+        <div class="u-flex u-flex-col u-gap-gutter lg:u-w-[30vw]">
+            <h2 class="u-text-h3 u-uppercase">Lorem Ipsum Dolor</h2>
+            <p class="u-text-p">
+                Diam maecenas ultricies mi eget mauris pharetra et ultrices. Duis convallis
+                convallis tellus id interdum velit laoreet. Sit amet risus nullam eget felis eget
+                nunc lobortis mattis. Auctor neque vitae tempus quam pellentesque nec nam aliquam.
+            </p>
+            <p class="u-text-p">
+                Sed faucibus turpis in eu mi bibendum neque egestas. Natoque penatibus et magnis dis
+                parturient montes nascetur ridiculus. Lacus vel facilisis volutpat est velit egestas
+                dui id ornare. Tincidunt dui ut ornare lectus sit amet est.
+            </p>
+            <p class="u-text-p">
+                Potenti nullam ac tortor vitae purus faucibus. Diam maecenas ultricies mi eget
+                mauris pharetra et ultrices. Duis convallis convallis tellus id interdum velit
+                laoreet.
+            </p>
+        </div>
+    </div>
+</section>

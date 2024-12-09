@@ -1,0 +1,40 @@
+---
+const missions = [
+    {
+        title: 'Natural Beauty',
+        description:
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer eget aliquet nibh praesent tristique magna sit amet purus. Lacus vel facilisis volutpat est velit egestas dui id. Facilisis sed odio morbi quis. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Vulputate dignissim suspendisse in est ante. '
+    },
+    {
+        title: 'Care and Health',
+        description:
+            'Nibh tortor id aliquet lectus proin nibh nisl condimentum id. Risus in hendrerit gravida rutrum quisque non tellus orci. Egestas quis ipsum suspendisse ultrices gravida dictum fusce ut. Feugiat nisl pretium fusce id velit ut tortor pretium viverra. Diam vel quam elementum pulvinar. Felis imperdiet proin fermentum leo vel orci porta. Elementum integer enim neque volutpat ac tincidunt vitae semper.'
+    },
+    {
+        title: 'Sustainability',
+        description:
+            'Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. In hac habitasse platea dictumst vestibulum rhoncus. Bibendum arcu vitae elementum curabitur vitae nunc sed velit. Suscipit tellus mauris a diam maecenas sed. Sit amet massa vitae tortor condimentum lacinia quis vel. Varius duis at consectetur lorem donec. '
+    }
+];
+---
+
+<section data-scroll-section>
+    <div class="u-container u-mt-[20vw] u-flex u-flex-col u-justify-center u-gap-[3vw]">
+        <h2 class="u-text-center u-text-h2 u-uppercase">
+            Our <span
+                class="u-rounded-[50px] u-bg-primary u-px-4 u-py-1 u-underline lg:u-px-4 lg:u-py-2"
+                >mission</span
+            >
+        </h2>
+        <ul class="u-flex u-flex-col u-justify-between lg:u-flex-row">
+            {
+                missions.map((mission) => (
+                    <li class="u-flex u-flex-col u-gap-gutter lg:u-w-[25vw]">
+                        <h3 class="u-text-h3 u-uppercase">{mission.title}</h3>
+                        <p class="u-text-p">{mission.description}</p>
+                    </li>
+                ))
+            }
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,183 @@
+---
+import Layout from '@layouts/Layout.astro';
+import Button from '@components/Button/Button.astro';
+import Image from '@components/Image/Image.astro';
+import ProductInfo from '@sections/ProductInfo/ProductInfo.astro';
+
+export async function getStaticPaths() {
+    const pages = [
+        {
+            slug: 'hair-mask',
+            title: 'Hair Mask',
+            advantages: 'protecting & moisturizing',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit at imperdiet dui.',
+            size: '150ml',
+            price: '54$',
+            ingridients:
+                'Water, Coconut Oil, Grapeseed Oil, Jojoba Oil, Shea Butter, Vitamin E, Fragrance, Sodium Chloride, Sodium Benzoate, Potassium Sorbate, Citric Acid, Sodium Hydroxide, Propylene Glycol.',
+            use: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer eget aliquet nibh praesent tristique magna sit amet purus.',
+            image: import('@images/product-1.png')
+        },
+        {
+            slug: 'hair-shampoo',
+            title: 'Hair Shampoo',
+            advantages: 'moisturizing & clensing',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit at imperdiet dui.',
+            size: '200ml',
+            price: '60$',
+            ingridients:
+                'Water, Coconut Oil, Grapeseed Oil, Jojoba Oil, Shea Butter, Vitamin E, Fragrance, Sodium Chloride, Sodium Benzoate, Potassium Sorbate, Citric Acid, Sodium Hydroxide, Propylene Glycol.',
+            use: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer eget aliquet nibh praesent tristique magna sit amet purus.',
+            image: import('@images/product-2.png')
+        },
+        {
+            slug: 'hair-balm',
+            title: 'Hair Balm',
+            advantages: 'moisturizing & smoothing',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit at imperdiet dui.',
+            size: '150ml',
+            price: '54$',
+            ingridients:
+                'Water, Coconut Oil, Grapeseed Oil, Jojoba Oil, Shea Butter, Vitamin E, Fragrance, Sodium Chloride, Sodium Benzoate, Potassium Sorbate, Citric Acid, Sodium Hydroxide, Propylene Glycol.',
+            use: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer eget aliquet nibh praesent tristique magna sit amet purus.',
+            image: import('@images/product-3.png')
+        },
+        {
+            slug: 'hair-spray',
+            title: 'Hair Spray',
+            advantages: 'heat protection & recovering',
+            description:
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At erat pellentesque adipiscing commodo elit at imperdiet dui.',
+            size: '150ml',
+            price: '54$',
+            ingridients:
+                'Water, Coconut Oil, Grapeseed Oil, Jojoba Oil, Shea Butter, Vitamin E, Fragrance, Sodium Chloride, Sodium Benzoate, Potassium Sorbate, Citric Acid, Sodium Hydroxide, Propylene Glycol.',
+            use: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer eget aliquet nibh praesent tristique magna sit amet purus.',
+            image: import('@images/product-4.png')
+        }
+    ];
+
+    return pages.map((page) => ({
+        params: {
+            product: page.slug
+        },
+        props: {
+            title: page.title,
+            advantages: page.advantages,
+            description: page.description,
+            size: page.size,
+            price: page.price,
+            ingridients: page.ingridients,
+            use: page.use,
+            image: page.image
+        }
+    }));
+}
+
+const { title, description, advantages, size, price, ingridients, use, image } = Astro.props;
+---
+
+<Layout title="Product">
+    <header data-scroll-section>
+        <div
+            class="u-container u-mt-[5vw] u-flex u-flex-col u-content-center u-items-center u-justify-center u-gap-gutter lg:u-flex-row"
+        >
+            <div class="u-order-2 lg:u-order-1 lg:u-w-1/2">
+                <div class="u-flex u-flex-col">
+                    <h1 class="u-heading-h2">
+                        BlueCloud {title}
+                    </h1>
+                    <span class="u-heading-h2">{advantages}</span>
+                </div>
+                <div
+                    class="u-relative u-mt-[2vw] u-flex u-flex-col after:u-absolute after:-u-bottom-4 after:u-left-0 after:u-h-[1px] after:u-w-full after:u-bg-black after:u-content-[''] lg:u-mt-[1vw] lg:after:-u-bottom-6 lg:after:u-w-[30vw]"
+                >
+                    <span class="u-flex u-flex-row u-gap-[4vw]">
+                        <h4 class="u-text-h4">For</h4>
+                        <p class="u-text-h4">All hair types</p>
+                    </span>
+                    <span class="u-flex u-flex-row u-gap-[4vw]">
+                        <h4 class="u-text-h4">Size</h4>
+                        <p class="u-text-h4">{size}</p>
+                    </span>
+                </div>
+                <div class="u-mt-[5vw] lg:u-mt-[3vw]">
+                    <div class="u-flex u-gap-10">
+                        <button
+                            class="u-border-b-2 u-border-black u-px-4 u-py-2 u-text-sm hover:u-bg-gray-100"
+                            >DESCRIPTION</button
+                        >
+                        <button class="u-px-4 u-py-2 u-text-sm hover:u-bg-gray-100"
+                            >INGREDIENTS</button
+                        >
+                        <button class="u-px-4 u-py-2 u-text-sm hover:u-bg-gray-100"
+                            >HOW TO USE</button
+                        >
+                    </div>
+
+                    <div class="u-py-7">
+                        <div id="description" class="u-block">
+                            <p>{description}</p>
+                        </div>
+                        <div id="ingredients" class="u-hidden">
+                            <p>{ingridients}</p>
+                        </div>
+                        <div id="howToUse" class="u-hidden">
+                            <p>{use}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="u-mt-[5vw]">
+                    <h3 class="u-text-h3">{price}</h3>
+                    <Button class="c-button--primary u-text-h2 u-uppercase" target="_blank"
+                        >Add to cart
+                    </Button>
+                </div>
+            </div>
+            <div class="u-order-1 u-flex u-items-center u-justify-center lg:u-order-2">
+                <figure class="u-h-full u-w-[30vw] lg:u-w-[15vw]">
+                    <Image
+                        src={image}
+                        alt={title}
+                        class="u-h-full u-w-full u-object-cover"
+                        loading="eager"
+                    />
+                </figure>
+            </div>
+        </div>
+    </header>
+
+    <ProductInfo />
+</Layout>
+
+<script>
+    const tabs = document.querySelectorAll('button');
+    const contents = {
+        DESCRIPTION: document.getElementById('description'),
+        INGREDIENTS: document.getElementById('ingredients'),
+        'HOW TO USE': document.getElementById('howToUse')
+    } as const;
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach((t) => t.classList.remove('u-border-b-2', 'u-border-black'));
+            tab.classList.add('u-border-b-2', 'u-border-black');
+
+            Object.values(contents).forEach((content) => {
+                if (content) {
+                    content.classList.add('u-hidden');
+                    content.classList.remove('u-block');
+                }
+            });
+
+            const content = tab.textContent && contents[tab.textContent as keyof typeof contents];
+            if (content) {
+                content.classList.remove('u-hidden');
+                content.classList.add('u-block');
+            }
+        });
+    });
+</script>

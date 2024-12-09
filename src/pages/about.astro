@@ -1,37 +1,12 @@
 ---
 import Layout from '@layouts/Layout.astro';
-import Wysiwyg from '../components/Wysiwyg/Wysiwyg.astro';
-import Accordion from '../components/Accordion/Accordion.astro';
+import AboutHeader from '@sections/AboutHeader/AboutHeader.astro';
+import InfoBlocks from '@sections/InfoBlocks/InfoBlocks.astro';
+import Mission from '@sections/Mission/Mission.astro';
 ---
 
 <Layout title="About">
-    <header class="u-container">
-        <h1 class="u-heading-h1">About</h1>
-        <Accordion label="Accordion" name="accordion">Accordion content</Accordion>
-    </header>
-    <div class="w-full u-mt-fluid-xl u-h-[20vh] u-bg-black"></div>
-
-    <div class="u-container u-mt-fluid-xl">
-        <div class="u-grid u-grid-cols-12 u-gap-gutter">
-            <div class="u-col-span-full u-text-body md:u-col-span-6">
-                <Wysiwyg>
-                    <Fragment
-                        set:html={`<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quam, nam omnis sunt laudantium tenetur obcaecati? Inventore eos vitae id repellat cum possimus voluptates nam voluptatum, assumenda, atque nesciunt debitis?</p>`}
-                    />
-                </Wysiwyg>
-            </div>
-
-            <div class="u-col-span-full u-text-body md:u-col-span-6">
-                <Wysiwyg>
-                    <Fragment
-                        set:html={`<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quam, nam omnis sunt laudantium tenetur obcaecati? Inventore eos vitae id repellat cum possimus voluptates nam voluptatum, assumenda, atque nesciunt debitis?</p>`}
-                    />
-                </Wysiwyg>
-            </div>
-        </div>
-
-        <!-- Placeholder -->
-        <div class="w-full u-mt-fluid-xl u-h-[50vh] u-bg-black u-opacity-50"></div>
-        <div class="w-full u-mt-fluid-xl u-h-[50vh] u-bg-primary"></div>
-    </div>
+    <AboutHeader />
+    <InfoBlocks />
+    <Mission />
 </Layout>

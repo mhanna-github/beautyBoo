@@ -5,42 +5,50 @@ const products = [
     {
         image: import('@images/product-1.png'),
         title: 'Mask',
-        price: '54$'
+        price: '54$',
+        slug: 'hair-mask'
     },
     {
         image: import('@images/product-2.png'),
         title: 'Shampoo',
-        price: '60$'
+        price: '60$',
+        slug: 'hair-shampoo'
     },
     {
         image: import('@images/product-3.png'),
         title: 'Balm',
-        price: '49$'
+        price: '49$',
+        slug: 'hair-balm'
     },
     {
         image: import('@images/product-4.png'),
         title: 'Spray',
-        price: '42$'
-    },
-    {
-        image: import('@images/product-5.png'),
-        title: 'Gel',
-        price: '58$'
+        price: '42$',
+        slug: 'hair-spray'
     },
     {
         image: import('@images/product-1.png'),
+        title: 'Gel',
+        price: '58$',
+        slug: 'hair-mask'
+    },
+    {
+        image: import('@images/product-2.png'),
         title: 'Mask',
-        price: '64$'
+        price: '64$',
+        slug: 'hair-shampoo'
     },
     {
         image: import('@images/product-2.png'),
         title: 'Foam',
-        price: '52$'
+        price: '52$',
+        slug: 'hair-balm'
     },
     {
         image: import('@images/product-3.png'),
         title: 'Balm',
-        price: '39$'
+        price: '39$',
+        slug: 'hair-spray'
     }
 ];
 ---
@@ -60,7 +68,10 @@ const products = [
                 products.map((product, index) => (
                     <li>
                         <h3 class="u-text-h3">0{index + 1}</h3>
-                        <a class="u-mt-gutter u-flex u-cursor-pointer u-flex-col u-items-center u-gap-gutter">
+                        <a
+                            class="u-mt-gutter u-flex u-cursor-pointer u-flex-col u-items-center u-gap-gutter"
+                            href={`/products/${product.slug}`}
+                        >
                             <figure class="u-hover-scale u-relative u-aspect-[264/622] u-w-[25vw] lg:u-w-[12vw]">
                                 <Image
                                     src={product.image}

@@ -1,0 +1,22 @@
+---
+import Image from '@components/Image/Image.astro';
+---
+
+<header data-scroll-section>
+    <div
+        class="u-container u-mt-fluid-sm u-flex u-flex-col u-items-center u-justify-center u-gap-gutter u-text-center lg:u-items-start lg:u-text-left"
+    >
+        <h1 class="u-heading-h1 u-uppercase">About Us</h1>
+        <p class="u-text-h3 u-uppercase">
+            Integer eget aliquet nibh praesent tristique magna sit amet purus.
+        </p>
+        <figure class="u-h-full u-w-full">
+            <Image
+                src={import('@images/about-header.png')}
+                alt="About Us"
+                class="u-h-full u-w-full u-object-cover"
+                loading="eager"
+            />
+        </figure>
+    </div>
+</header>
