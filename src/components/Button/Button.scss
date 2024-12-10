@@ -97,4 +97,11 @@
         --button-stroke-color: transparent;
         --button-font-size: #{theme('fontSize.p')};
     }
+
+    &--navmobile{
+        --button-color: #{theme-color('black')};
+        --button-background: transparent;
+        --button-stroke-color: transparent;
+        --button-font-size: #{theme('fontSize.h1')};
+    }
 }
