@@ -26,8 +26,8 @@ export default {
                 }
             },
             fontFamily: {
-                telegraf: ['PP Telegraf', ...defaultTheme.fontFamily.serif],
-                monument: ['PP Monument Extended', ...defaultTheme.fontFamily.sans]
+                telegraf: ['Telegraf', 'sans-serif'],
+                monument: ['MonumentExtended', ...defaultTheme.fontFamily.sans]
             },
             fontSize: {
                 h1: utopiaClamp(35, 65),
@@ -69,6 +69,9 @@ export default {
                 '5xl': '2400px'
             },
             spacing: {
+                marquee: '26px',
+                nav: '66px',
+                header: '92px',
                 containerMargin: '40px',
                 containerMarginMobile: '15px',
                 'fluid-xs': utopiaClamp(8, 10),
@@ -148,6 +151,11 @@ export default {
                 above: '1',
                 default: '0',
                 below: '-1'
+            },
+            height: {
+                marquee: '26px',
+                nav: '66px',
+                header: '92px'
             }
         }
     },

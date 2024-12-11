@@ -1,14 +1,41 @@
 ---
-import Image from '@components/Image/Image.astro';
 import Button from '@components/Button/Button.astro';
 ---
 
-<section data-scroll-section>
-    <div class="u-mt-[20vw] u-flex u-flex-col u-items-center u-gap-gutter lg:u-mt-[15vw]">
-        <a href="">
+<div class="u-container u-grid u-h-nav u-border-b u-border-black">
+    <nav class="u-my-auto u-flex u-flex-row u-justify-between u-gap-gutter u-bg-white">
+        <button class="lg:u-hidden" id="menu-button" aria-label="Menu">
+            <span class="u-text-h3 u-uppercase">Menu</span>
+        </button>
+        <div
+            class="menu-panel u-ease-[cubic-bezier(0.455, 0.030, 0.515, 0.955)] u-fixed u-inset-0 u-z-[999] u-flex u-h-[100dvh] u-w-full u--translate-x-full u-items-center u-justify-center u-bg-white u-transition-transform u-duration-700 lg:u-hidden"
+        >
+            <button class="lg:u-hidden" id="menu-close-button">
+                <p class="u-absolute u-left-[3vw] u-top-12 u-text-h3 u-uppercase">Close</p>
+            </button>
+            <ul class="u-flex u-flex-col u-gap-[4vw] u-text-center lg:u-flex">
+                <li>
+                    <Button href="/" class="c-button c-button--navmobile"> Home Page </Button>
+                </li>
+                <li>
+                    <Button href="/product" class="c-button c-button--navmobile">
+                        Hair Products
+                    </Button>
+                </li>
+                <li>
+                    <Button href="https://example.com" class="c-button c-button--navmobile">
+                        Face Products
+                    </Button>
+                </li>
+                <li>
+                    <Button href="/about" class="c-button c-button--navmobile"> About Us </Button>
+                </li>
+            </ul>
+        </div>
+        <a href="/">
             <svg
-                width="160"
-                height="48"
+                width="120"
+                height="33"
                 viewBox="0 0 120 33"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,82 +96,115 @@ import Button from '@components/Button/Button.astro';
                     fill="#131313"></path>
             </svg>
         </a>
-        <div class="u-w-7/7 u-grid u-grid-cols-7 u-overflow-hidden">
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img1.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img2.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img3.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img4.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img5.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img6.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img7.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img8.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
-            <figure class="instagram-link-img">
-                <Image
-                    src={import('@images/instagram-img9.png')}
-                    alt="Instagram"
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                />
-            </figure>
+        <ul class="u-hidden u-flex-row u-gap-gutter lg:u-flex">
+            <li>
+                <Button href="/" class="c-button c-button--nav"> Home Page </Button>
+            </li>
+            <li>
+                <Button href="/product" class="c-button c-button--nav"> Hair Products </Button>
+            </li>
+            <li>
+                <Button href="https://example.com" class="c-button c-button--nav">
+                    Face Products
+                </Button>
+            </li>
+            <li>
+                <Button href="/about" class="c-button c-button--nav"> About Us </Button>
+            </li>
+        </ul>
+        <button id="cart">
+            <svg
+                width="50"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M3 2C2.44772 2 2 2.44772 2 3C2 3.55228 2.44772 4 3 4V2ZM5 3L5.99705 2.9233C5.95698 2.40231 5.52254 2 5 2V3ZM21 6L21.9939 6.11043C22.0253 5.82773 21.9348 5.54503 21.7451 5.33308C21.5554 5.12113 21.2844 5 21 5V6ZM5.23077 6L4.23371 6.0767L5.23077 6ZM18.3387 15.1187L18.4099 16.1161L18.3387 15.1187ZM7.98405 15.8583L7.9128 14.8608L7.98405 15.8583ZM3 4H5V2H3V4ZM8.05529 16.8557L18.4099 16.1161L18.2674 14.1212L7.9128 14.8608L8.05529 16.8557ZM21.1778 13.455L21.9939 6.11043L20.0061 5.88957L19.19 13.2342L21.1778 13.455ZM4.00295 3.0767L4.23371 6.0767L6.22782 5.9233L5.99705 2.9233L4.00295 3.0767ZM4.23371 6.0767L4.85039 14.0935L6.8445 13.9401L6.22782 5.9233L4.23371 6.0767ZM21 5H5.23077V7H21V5ZM18.4099 16.1161C19.8537 16.013 21.018 14.8937 21.1778 13.455L19.19 13.2342C19.1368 13.7137 18.7487 14.0868 18.2674 14.1212L18.4099 16.1161ZM7.9128 14.8608C7.36404 14.9 6.88669 14.4886 6.8445 13.9401L4.85039 14.0935C4.97697 15.739 6.40903 16.9733 8.05529 16.8557L7.9128 14.8608Z"
+                    fill="#292929"></path>
+                <rect
+                    x="8.5"
+                    y="20.5"
+                    width="0.01"
+                    height="0.01"
+                    stroke="#292929"
+                    stroke-width="2"
+                    stroke-linejoin="round"></rect>
+                <rect
+                    x="17.5"
+                    y="20.5"
+                    width="0.01"
+                    height="0.01"
+                    stroke="#292929"
+                    stroke-width="2"
+                    stroke-linejoin="round"></rect>
+            </svg>
+        </button>
+        <div
+            class="cart-items u-ease-[cubic-bezier(0.455, 0.030, 0.515, 0.955)] u-fixed u-right-0 u-top-0 u-z-50 u-h-[100vh] u-w-[90%] u-translate-x-full u-border-l u-border-black u-bg-white u-transition-transform u-duration-700 lg:u-w-[45%]"
+        >
+            <div class="u-container u-py-fluid-sm">
+                <div class="u-flex u-items-center u-justify-between">
+                    <h3 class="u-text-h3 u-uppercase">Cart</h3>
+                    <button id="cart-close-button" class="u-text-h3 u-uppercase">Close</button>
+                </div>
+                <div class="u-mt-gutter u-heading-h2 u-mt-28">
+                    <h3>Cart is in development</h3>
+                </div>
+            </div>
         </div>
-        <Button class="c-button--secondary u-uppercase" href="https://example.com" target="_blank">
-            Follow us on instagram
-        </Button>
-    </div>
-</section>
+    </nav>
+</div>
+
+<script>
+    const menuButton = document.getElementById('menu-button');
+    const menuCloseButton = document.getElementById('menu-close-button');
+    const menuPanel = document.querySelector('.menu-panel');
+    const cartButton = document.getElementById('cart');
+    const cartCloseButton = document.getElementById('cart-close-button');
+    const cartPanel = document.querySelector('.cart-items');
+
+    menuButton?.addEventListener('click', () => {
+        if (menuPanel instanceof HTMLElement) {
+            menuPanel.style.transform = 'translateX(0)';
+            if (cartPanel instanceof HTMLElement) {
+                cartPanel.style.transform = 'translateX(100%)';
+            }
+        }
+    });
+
+    menuCloseButton?.addEventListener('click', () => {
+        if (menuPanel instanceof HTMLElement) {
+            menuPanel.style.transform = 'translateX(-100%)';
+        }
+    });
+
+    document.addEventListener('resize', () => {
+        if (menuPanel instanceof HTMLElement) {
+            menuPanel.style.transform = 'translateX(-100%)';
+        }
+    });
+
+    cartButton?.addEventListener('click', () => {
+        console.log('cart button clicked');
+        if (cartPanel instanceof HTMLElement) {
+            cartPanel.style.transform = 'translateX(0)';
+            if (menuPanel instanceof HTMLElement) {
+                menuPanel.style.transform = 'translateX(-100%)';
+            }
+        }
+    });
+
+    cartCloseButton?.addEventListener('click', () => {
+        if (cartPanel instanceof HTMLElement) {
+            cartPanel.style.transform = 'translateX(100%)';
+        }
+    });
+
+    document.addEventListener('resize', () => {
+        if (cartPanel instanceof HTMLElement) {
+            cartPanel.style.transform = 'translateX(100%)';
+        }
+    });
+</script>

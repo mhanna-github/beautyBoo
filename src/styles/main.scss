@@ -68,6 +68,22 @@
     }
 }
 
+@font-face {
+    font-family: 'Telegraf';
+    src: url('/fonts/subset-PPTelegraf-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('/fonts/subset-PPMonumentExtended-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 html {
     font-family: theme('fontFamily.telegraf');
 }
