@@ -70,6 +70,36 @@ const FONTS: string[] = [
                 <button class="lg:u-hidden" id="menu-button">
                     <p class="u-text-h3 u-uppercase">Menu</p>
                 </button>
+                <div
+                    class="u-fixed u-left-0 u-top-0 u-z-50 u-flex u-hidden u-h-[100vh] u-w-[100vw] u-items-center u-justify-center u-bg-white lg:u-hidden"
+                    style="transform: translateX(-100%)"
+                >
+                    <button class="lg:u-hidden" id="menu-close-button">
+                        <p class="u-absolute u-left-[3vw] u-top-12 u-text-h3 u-uppercase">Close</p>
+                    </button>
+                    <ul class="u-flex u-flex-col u-gap-[4vw] u-text-center lg:u-flex">
+                        <li>
+                            <Button href="/" class="c-button c-button--navmobile">
+                                Home Page
+                            </Button>
+                        </li>
+                        <li>
+                            <Button href="/product" class="c-button c-button--navmobile">
+                                Hair Products
+                            </Button>
+                        </li>
+                        <li>
+                            <Button href="https://example.com" class="c-button c-button--navmobile">
+                                Face Products
+                            </Button>
+                        </li>
+                        <li>
+                            <Button href="/about" class="c-button c-button--navmobile">
+                                About Us
+                            </Button>
+                        </li>
+                    </ul>
+                </div>
                 <a href="/">
                     <svg
                         width="120"
@@ -152,9 +182,9 @@ const FONTS: string[] = [
                         <Button href="/about" class="c-button c-button--nav"> About Us </Button>
                     </li>
                 </ul>
-                <a href="">
+                <button id="cart">
                     <svg
-                        width=""
+                        width="50"
                         height="24"
                         viewBox="0 0 24 24"
                         fill="none"
@@ -180,7 +210,24 @@ const FONTS: string[] = [
                             stroke-width="2"
                             stroke-linejoin="round"></rect>
                     </svg>
-                </a>
+                </button>
+                <div
+                    id="cart-items"
+                    class="u-fixed u-right-0 u-top-0 u-z-50 u-hidden u-h-[100vh] u-w-[100vw] u-w-[90%] u-border-l u-border-black u-bg-white lg:u-w-[45%]"
+                    style="transform: translateX(100%)"
+                >
+                    <div class="u-container u-py-fluid-sm">
+                        <div class="u-flex u-items-center u-justify-between">
+                            <h3 class="u-text-h3 u-uppercase">Cart</h3>
+                            <button id="cart-close-button" class="u-text-h3 u-uppercase"
+                                >Close</button
+                            >
+                        </div>
+                        <div class="u-mt-gutter u-heading-h2 u-mt-28">
+                            <h3>Cart is in development</h3>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
 
@@ -359,9 +406,48 @@ const FONTS: string[] = [
             import { setViewportSize } from '@scripts/utils/setViewportSize';
             import { $screenDebounce } from '@scripts/stores/screen';
 
-            // Set viewport size
             $screenDebounce.subscribe(() => {
                 setViewportSize();
+            });
+
+            const menuButton = document.getElementById('menu-button');
+            const menuCloseButton = document.getElementById('menu-close-button');
+            const mobileMenu = document.querySelector('.u-fixed');
+
+            menuButton?.addEventListener('click', () => {
+                mobileMenu?.classList.remove('u-hidden');
+                setTimeout(() => {
+                    mobileMenu?.classList.add('u-slide-in');
+                    mobileMenu?.classList.remove('u-slide-out');
+                }, 10);
+            });
+
+            menuCloseButton?.addEventListener('click', () => {
+                mobileMenu?.classList.add('u-slide-out');
+                mobileMenu?.classList.remove('u-slide-in');
+                setTimeout(() => {
+                    mobileMenu?.classList.add('u-hidden');
+                }, 300);
+            });
+
+            const cartButton = document.getElementById('cart');
+            const cartCloseButton = document.getElementById('cart-close-button');
+            const cartPanel = document.getElementById('cart-items');
+
+            cartButton?.addEventListener('click', () => {
+                cartPanel?.classList.remove('u-hidden');
+                setTimeout(() => {
+                    cartPanel?.classList.add('u-slide-in-right');
+                    cartPanel?.classList.remove('u-slide-out-right');
+                }, 10);
+            });
+
+            cartCloseButton?.addEventListener('click', () => {
+                cartPanel?.classList.add('u-slide-out-right');
+                cartPanel?.classList.remove('u-slide-in-right');
+                setTimeout(() => {
+                    cartPanel?.classList.add('u-hidden');
+                }, 300);
             });
         </script>
     </body>
