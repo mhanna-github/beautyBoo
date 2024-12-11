@@ -61,8 +61,8 @@ const products = [
                 We`re taking a careful care of your hair on each step of washing hair routine
             </p>
         </div>
-        <div class="swiper u-mt-[3vw] u-overflow-hidden" data-swiper>
-            <ul class="swiper-wrapper u-ml-[2.5vw]">
+        <div class="swiper u-ml-[2.5vw] u-mt-[3vw] u-overflow-hidden" data-swiper client:only="js">
+            <ul class="swiper-wrapper">
                 {
                     products.map((product, index) => (
                         <li class="swiper-slide" style="width: auto;">
@@ -90,14 +90,12 @@ const products = [
         </div>
     </div>
 </header>
-
 <style>
     .swiper {
         position: relative;
         width: 100%;
         overflow: hidden;
     }
-
     .swiper-wrapper {
         position: relative;
         display: flex;
@@ -106,24 +104,16 @@ const products = [
         z-index: 1;
         transition-property: transform;
     }
-
     .swiper-slide {
         margin-right: 10vw;
     }
 </style>
-
 <script>
-    import 'swiper/css';
-    import 'swiper/css/free-mode';
     import Swiper from 'swiper';
     import { FreeMode } from 'swiper/modules';
-    import type { SwiperOptions } from 'swiper/types';
-
-    let swiper: Swiper | null = null;
-
+    let swiper = null;
     function initSwiper() {
         console.log('Initializing Swiper...');
-
         // Wait for next frame to ensure DOM is ready
         requestAnimationFrame(() => {
             // Destroy existing instance if it exists
@@ -131,14 +121,12 @@ const products = [
                 console.log('Destroying old Swiper instance');
                 swiper.destroy(true, true);
             }
-
             // Check if element exists
             const swiperElement = document.querySelector('[data-swiper]');
             if (!swiperElement) {
                 console.log('Swiper element not found');
                 return;
             }
-
             console.log('Creating new Swiper instance');
             swiper = new Swiper('[data-swiper]', {
                 slidesPerView: 'auto',
@@ -158,34 +146,31 @@ const products = [
             });
         });
     }
-
     // Create a mutation observer to watch for the swiper element
-    const observer = new MutationObserver(() => {
-        if (swiper?.destroy) {
-            swiper.destroy();
+    const observer = new MutationObserver((mutations, obs) => {
+        const swiperElement = document.querySelector('[data-swiper]');
+        if (swiperElement) {
+            console.log('Swiper element found by observer');
+            initSwiper();
+            // Don't disconnect the observer in case we need it again after navigation
         }
-        // The observer will handle initialization when the element appears
     });
-
     // Start observing
     observer.observe(document.body, {
         childList: true,
         subtree: true
     });
-
     // Initial load
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initSwiper);
     } else {
         initSwiper();
     }
-
     // Handle navigation events
     document.addEventListener('astro:after-swap', () => {
         console.log('astro:after-swap fired');
         // The observer will handle initialization when the element appears
     });
-
     // Cleanup before navigation
     document.addEventListener('astro:before-swap', () => {
         console.log('astro:before-swap fired');
