@@ -113,10 +113,8 @@ const products = [
 </style>
 
 <script>
-    import Swiper from 'swiper';
-    import { FreeMode } from 'swiper/modules';
-
-    let swiper = null;
+    import type Swiper from 'swiper';
+    let swiper: Swiper | null = null;
 
     function initSwiper() {
         console.log('Initializing Swiper...');
@@ -157,13 +155,11 @@ const products = [
     }
 
     // Create a mutation observer to watch for the swiper element
-    const observer = new MutationObserver((mutations, obs) => {
-        const swiperElement = document.querySelector('[data-swiper]');
-        if (swiperElement) {
-            console.log('Swiper element found by observer');
-            initSwiper();
-            // Don't disconnect the observer in case we need it again after navigation
+    const observer = new MutationObserver(() => {
+        if (swiper?.destroy) {
+            swiper.destroy();
         }
+        // The observer will handle initialization when the element appears
     });
 
     // Start observing

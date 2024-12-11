@@ -1,8 +1,6 @@
 ---
 import '@styles/main.scss';
 import Button from '@components/Button/Button.astro';
-import { SEO } from 'astro-seo';
-import { getSeo } from '@scripts/utils/seo';
 
 interface Props {
     title: string;
@@ -381,9 +379,10 @@ const FONTS: string[] = [
 
                 // Close menu when clicking outside
                 document.addEventListener('click', (event) => {
+                    const target = event.target as Node;
                     if (
-                        !menuButton.contains(event.target) &&
-                        !mobileMenu.contains(event.target) &&
+                        !menuButton.contains(target) &&
+                        !mobileMenu.contains(target) &&
                         !mobileMenu.classList.contains('u-hidden')
                     ) {
                         mobileMenu.classList.add('u-hidden');
