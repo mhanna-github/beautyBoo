@@ -61,7 +61,7 @@ const products = [
                 We`re taking a careful care of your hair on each step of washing hair routine
             </p>
         </div>
-        <div class="swiper u-ml-[2.5vw] u-mt-[3vw] u-overflow-hidden" data-swiper client:only="js">
+        <div class="swiper u-ml-[2.5vw] u-mt-[3vw] u-overflow-hidden" data-swiper>
             <ul class="swiper-wrapper">
                 {
                     products.map((product, index) => (
@@ -109,24 +109,28 @@ const products = [
     }
 </style>
 <script>
+    import 'swiper/css';
+    import 'swiper/css/free-mode';
     import Swiper from 'swiper';
     import { FreeMode } from 'swiper/modules';
-    let swiper = null;
-    function initSwiper() {
+    import type { SwiperOptions } from 'swiper/types';
+
+    let swiper: Swiper | null = null;
+
+    function initSwiper(): void {
         console.log('Initializing Swiper...');
-        // Wait for next frame to ensure DOM is ready
         requestAnimationFrame(() => {
-            // Destroy existing instance if it exists
             if (swiper && swiper.destroy) {
                 console.log('Destroying old Swiper instance');
                 swiper.destroy(true, true);
             }
-            // Check if element exists
+
             const swiperElement = document.querySelector('[data-swiper]');
             if (!swiperElement) {
                 console.log('Swiper element not found');
                 return;
             }
+
             console.log('Creating new Swiper instance');
             swiper = new Swiper('[data-swiper]', {
                 slidesPerView: 'auto',
@@ -146,6 +150,7 @@ const products = [
             });
         });
     }
+
     // Create a mutation observer to watch for the swiper element
     const observer = new MutationObserver((mutations, obs) => {
         const swiperElement = document.querySelector('[data-swiper]');
