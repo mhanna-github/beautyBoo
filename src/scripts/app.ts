@@ -1,11 +1,6 @@
-import { Transitions } from '@scripts/classes/Transitions';
 import { Scroll } from '@scripts/classes/Scroll';
 import GridHelper from '@locomotivemtl/grid-helper';
 import tailwindConfig from '@root/tailwind.config';
-
-// Initialize the Transitions class
-const transitions = new Transitions();
-transitions.init();
 
 // Initialize the Scroll class
 Scroll.init();
