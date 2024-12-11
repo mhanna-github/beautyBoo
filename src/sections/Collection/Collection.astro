@@ -113,7 +113,11 @@ const products = [
 </style>
 
 <script>
-    import type Swiper from 'swiper';
+    import 'swiper/css';
+    import 'swiper/css/free-mode';
+    import Swiper from 'swiper';
+    import { FreeMode } from 'swiper/modules';
+    import type { SwiperOptions } from 'swiper/types';
     let swiper: Swiper | null = null;
 
     function initSwiper() {
