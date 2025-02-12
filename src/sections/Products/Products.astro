@@ -10,66 +10,52 @@ import Wysiwyg from '@components/Wysiwyg/Wysiwyg.astro';
             class="u-hidden u-max-w-screen-xl u-text-center u-text-h2 u-uppercase lg:u-block lg:u-text-left"
         >
             Lorem ipsum dolor sit amet,<span
-                class="u-rounded-[50px] u-bg-primary u-px-4 u-py-1 lg:u-px-4 lg:u-py-2"
+                class="u-rounded-[50px] u-bg-primary u-px-[8px] u-py-[4px] u-underline u-decoration-[2px] u-underline-offset-[3px] lg:u-px-[10px] lg:u-py-[5px] lg:u-decoration-[3px] lg:u-underline-offset-[4px]"
                 >consectetur</span
             > adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore <span
-                class="u-rounded-[50px] u-bg-primary u-px-4 u-py-1 lg:u-px-4 lg:u-py-2">magna</span
+                class="u-rounded-[50px] u-bg-primary u-px-[8px] u-py-[4px] u-underline u-decoration-[2px] u-underline-offset-[3px] lg:u-px-[10px] lg:u-py-[5px] lg:u-decoration-[3px] lg:u-underline-offset-[4px]"
+                >magna</span
             > aliqua.
         </h2>
         <div class="u-mt-[5vw] u-flex u-flex-col u-gap-gutter">
             <h2 class="u-text-center u-text-h2 u-uppercase">
                 With us you can <span class="u-text-primary">enjoy:</span>
             </h2>
-            <ul class="u-flex u-flex-col">
-                <li
-                    class="u-flex u-flex-row u-items-baseline u-justify-between u-gap-3 u-border-b u-border-t u-border-black u-py-4"
-                >
-                    <Accordion label="Hair Cosmetics" class="u-max-w-[75vw] u-text-h3 u-uppercase">
-                        <Wysiwyg class="u-text-p u-normal-case">
-                            <Fragment
-                                set:html={`<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque quam, nam omnis sunt laudantium tenetur obcaecati? Inventore eos vitae id repellat cum possimus voluptates nam voluptatum, assumenda, atque nesciunt debitis?</p>`}
-                            />
-                        </Wysiwyg>
-                    </Accordion>
-                    <Button
-                        class="c-button--link u-text-h2 u-uppercase"
-                        href="https://example.com"
-                        target="_blank">All</Button
-                    >
-                </li>
-                <li
-                    class="u-flex u-flex-row u-items-baseline u-justify-between u-gap-3 u-border-b u-border-black u-py-4"
-                >
-                    <Accordion label="Face Cosmetics" class="u-max-w-[75vw] u-text-h3 u-uppercase">
-                        <Wysiwyg class="u-text-p u-normal-case">
-                            <Fragment
-                                set:html={`<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>`}
-                            />
-                        </Wysiwyg>
-                    </Accordion>
-                    <Button
-                        class="c-button--link u-text-h2 u-uppercase"
-                        href="https://example.com"
-                        target="_blank">All</Button
-                    >
-                </li>
-                <li
-                    class="u-flex u-flex-row u-items-baseline u-justify-between u-gap-3 u-border-b u-border-black u-py-4"
-                >
-                    <Accordion label="Body Cosmetics" class="u-max-w-[75vw] u-text-h3 u-uppercase">
-                        <Wysiwyg class="u-text-p u-normal-case">
-                            <Fragment
-                                set:html={`<p>Facilisi mattis aliquam et dapibus morbi quam massa nec. Interdum feugiat feugiat aliquet; efficitur felis mi arcu curae imperdiet. Morbi pellentesque accumsan eros convallis habitasse sociosqu ultricies. Ullamcorper lectus facilisi quam praesent risus scelerisque nostra. Sapien mollis habitant sed tempus nisi augue neque semper. Aliquet laoreet porttitor nec felis integer nibh; parturient in fusce. Vehicula lobortis mauris morbi platea imperdiet neque. Cursus consectetur volutpat, dis magna lacinia arcu sollicitudin et pellentesque. Suspendisse ultricies suspendisse venenatis dis erat ligula lacinia. Scelerisque efficitur interdum mi mattis ex; dui non.</p>`}
-                            />
-                        </Wysiwyg>
-                    </Accordion>
-                    <Button
-                        class="c-button--link u-text-h2 u-uppercase"
-                        href="https://example.com"
-                        target="_blank">All</Button
-                    >
-                </li>
-            </ul>
+            <div class="u-flex u-flex-col">
+                <Accordion label="Hair Cosmetics" class="u-text-h3 u-uppercase">
+                    <p class="u-pb-[20px] u-text-p u-normal-case lg:u-max-w-[65vw]">
+                        Itaque quam, nam omnis sunt laudantium tenetur obcaecati? Inventore eos
+                        vitae id repellat cum possimus voluptates nam voluptatum, assumenda, atque
+                        nesciunt debitis?Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </Accordion>
+                <Accordion label="Body Cosmetics" class="u-text-h3 u-uppercase">
+                    <p class="u-pb-[20px] u-text-p u-normal-case lg:u-max-w-[65vw]">
+                        Itaque quam, nam omnis sunt laudantium tenetur obcaecati? Inventore eos
+                        vitae id repellat cum possimus voluptates nam voluptatum, assumenda, atque
+                        nesciunt debitis?Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </Accordion>
+                <Accordion label="Face Cosmetics" class="u-text-h3 u-uppercase">
+                    <p class="u-pb-[20px] u-text-p u-normal-case lg:u-max-w-[65vw]">
+                        Itaque quam, nam omnis sunt laudantium tenetur obcaecati? Inventore eos
+                        vitae id repellat cum possimus voluptates nam voluptatum, assumenda, atque
+                        nesciunt debitis?Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                        velit esse cillum dolore eu fugiat nulla pariatur.
+                    </p>
+                </Accordion>
+            </div>
         </div>
     </div>
 </section>

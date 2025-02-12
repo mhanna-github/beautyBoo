@@ -86,24 +86,25 @@ export default class Accordion extends ComponentElement {
             this.animation.cancel();
         }
 
-        this.animation = this.$root.animate(
-            {
-                height: [startHeight, endHeight]
-            },
-            {
-                duration: Accordion.DURATION,
+        setTimeout(() => {
+            this.animation = this.$root.animate(
+                {
+                    height: [startHeight, endHeight]
+                },
+                {
+                    duration: Accordion.DURATION,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
+                }
+            );
 
-                easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+            if (this.animation) {
+                this.animation.onfinish = () => this.onAnimationFinish(false);
+                this.animation.oncancel = () => {
+                    this.isClosing = false;
+                    this.$root.classList.add(Accordion.CLASS_OPEN);
+                };
             }
-        );
-
-        if (this.animation) {
-            this.animation.onfinish = () => this.onAnimationFinish(false);
-            this.animation.oncancel = () => {
-                this.isClosing = false;
-                this.$root.classList.add(Accordion.CLASS_OPEN);
-            };
-        }
+        }, 50);
     }
 
     start() {
@@ -115,6 +116,7 @@ export default class Accordion extends ComponentElement {
     expand() {
         this.isExpanding = true;
         this.$root.classList.add(Accordion.CLASS_OPEN);
+        this.$root.open = true;
 
         if (this.$parent) this.$parent.classList.add(Accordion.CLASS_OPEN);
 
@@ -131,7 +133,7 @@ export default class Accordion extends ComponentElement {
             },
             {
                 duration: Accordion.DURATION,
-                easing: 'linear'
+                easing: 'cubic-bezier(0.4, 0, 0.2, 1)'
             }
         );
 
